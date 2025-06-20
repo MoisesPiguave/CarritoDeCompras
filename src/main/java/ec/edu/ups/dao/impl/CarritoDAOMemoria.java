@@ -4,7 +4,7 @@ import ec.edu.ups.modelo.Carrito;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarritoDAOImpl implements CarritoDAO {
+public class CarritoDAOMemoria implements CarritoDAO {
 
     private List<Carrito> carritoList = new ArrayList<>();
 

@@ -1,6 +1,7 @@
 package ec.edu.ups.vista;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class CarritoAnadirView extends JInternalFrame {
     private JButton btnBuscar;
@@ -23,6 +24,11 @@ public class CarritoAnadirView extends JInternalFrame {
         setContentPane(panelPrincipal);
         setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
         setSize(500, 500);
+
+        DefaultTableModel model = new DefaultTableModel();
+        Object[] columnas = {"Codigo", "Nombre", "Precio", "Subtotal", "Iva", "Total"};
+        model.setColumnIdentifiers(columnas);
+        tblProductos.setModel(model);
         cargarDatos();
 
     }
@@ -32,6 +38,7 @@ public class CarritoAnadirView extends JInternalFrame {
         for(int i = 0; i < 20; i++){
             cbxCantidad.addItem(String.valueOf(i + 1));
         }
+
     }
 
     public JButton getBtnBuscar() {
